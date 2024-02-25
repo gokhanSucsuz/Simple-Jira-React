@@ -1,8 +1,12 @@
-import { useState } from "react"
+/* eslint-disable no-unused-vars */
+import { useContext, useState } from "react"
 import TaskCreate from "./TaskCreate"
+import TasksContext from "../context/task"
 
 /* eslint-disable react/prop-types */
-export default function TaskShow({ task, onDelete, onUpdate }) {
+export default function TaskShow({ task }) {
+
+    const { onDelete, editTask } = useContext(TasksContext)
     const [showEdit, setShowEdit] = useState(false)
     const removeTask = () => {
         onDelete(task.id)
@@ -14,7 +18,7 @@ export default function TaskShow({ task, onDelete, onUpdate }) {
 
     const handleSubmit = (id, updatedTitle, updatedTaskDesc) => {
         setShowEdit(false)
-        onUpdate(id, updatedTitle, updatedTaskDesc)
+        editTask(id, updatedTitle, updatedTaskDesc)
     }
     return (
         <>

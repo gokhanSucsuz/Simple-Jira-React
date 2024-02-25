@@ -1,7 +1,10 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-import { useState } from "react"
+import { useContext, useState } from "react"
+import TasksContext from "../context/task"
 
-export default function TaskCreate({ onCreate, task, taskFormUpdate, onUpdate }) {
+export default function TaskCreate({ task, taskFormUpdate, onUpdate }) {
+    const { editTask, createTask } = useContext(TasksContext)
     const [title, setTitle] = useState(task ? task.title : "")
     const [taskDesc, setTaskDesc] = useState(task ? task.taskDesc : '')
 
@@ -14,7 +17,7 @@ export default function TaskCreate({ onCreate, task, taskFormUpdate, onUpdate })
     const handleSubmit = (event) => {
         event.preventDefault();
         if (taskFormUpdate) { onUpdate(task.id, title, taskDesc) } else {
-            onCreate(title, taskDesc)
+            createTask(title, taskDesc)
 
         }
         setTaskDesc('')
