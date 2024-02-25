@@ -1,0 +1,55 @@
+body {
+    background-color: rgba(217, 234, 241, 0.63);
+}
+
+.firstForm, .taskElements {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+h1 {
+    text-align: center;
+}
+
+.listElements {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+.formElements {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+.formElements>input, .formElements>textarea,
+.listElements>p {
+    border-radius: 10px;
+    width: 450px;
+    margin-bottom: 5px;
+    padding: 10px;
+}
+
+.formElements>button,
+.listElements>button {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(86, 161, 86);
+    color: white;
+    border: none;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.removeButton {
+    background-color: crimson !important;
+}
